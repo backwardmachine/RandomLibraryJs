@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="RandomLibrarySequenceGenerator.js"></script>
+<title>Random Number Sequence Generator in Javascript</title>
+<body>
+<input type="field" name="rnsg__amount" id="rnsg__amount" value="100">
+<input type="button" name="rnsg__button" id="rnsg__button" value="Generate Random Number Sequence">
+<div id="rnsg__content"></div>
+<input type="button" name="rnsg__binary" id="rnsg__binary" value="binary">
+<input type="button" name="rnsg__integer" id="rnsg__integer" value="integer" selected>
+<!--
+<input type="button" name="rnsg__decimal" id="rnsg__decimal" value="decimal">
+<input type="button" name="rnsg__hexadecimal" id="rnsg__hexadecimal" value="hexadecimal">
+-->
+<input type="hidden" name="rnsg__mode" id="rnsg__mode" value="1">
+<div id="rnsg__integer__range">
+  range: <input type="text" id="rnsg__integer__r0" value="0"> to
+  <input type="text" id="rnsg__integer__r1" value="10000">
+  <br>
+  codex: <input type="text" id="rnsg__codex" value="0">
+  words: <input type="text" id="rnsg__words" value="4">
+</div>
+<script language="javascript">
+document.getElementById( "rnsg__button" ).addEventListener( "click", __rnsg__click__button );
+document.getElementById( "rnsg__amount" ).addEventListener( "click", __rnsg__click__amount );
+document.getElementById( "rnsg__binary" ).addEventListener( "click", __rnsg__click__fn( 0 ) );
+document.getElementById( "rnsg__integer" ).addEventListener( "click", __rnsg__click__fn( 1 ) );
+document.getElementById( "rnsg__integer" ).addEventListener( "click", function() {
+  document.getElementById( "rnsg__integer__range" ).style.display = "block";
+} );
+document.getElementById( "rnsg__button" ).click();
+</script>
+</body>
+</html>
